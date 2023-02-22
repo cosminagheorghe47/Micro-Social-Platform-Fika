@@ -1,0 +1,23 @@
+﻿@model MS_Fika.Models.Group
+
+@{
+    ViewBag.Title = "Members";
+}
+
+<h2 class="culoarebuna culoarebuna fontbun">Memberi din @Model.GroupName</h2>
+
+<a class="btn culoarebuton2 justify-content-end d-flex " href="/Groups/Show/@Model.GroupId"> Inapoi la Grup</a>
+<br />
+<hr class="linie-footer" />
+@if (ViewBag.Usersss != null)
+{
+    @foreach (var user in ViewBag.Usersss)
+    {   
+        <div class=" card-header4 culoarebuna fontbun card-text">@user.UserName</div>
+        <br />
+    }
+}
+else
+{
+    <h2 class="culoarebuna fontbun">Nu exista membri</h2>
+}
